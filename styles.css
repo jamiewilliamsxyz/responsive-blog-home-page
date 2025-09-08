@@ -81,7 +81,7 @@ h2 {
 h1 {
   font-size: 3.25rem;
   font-weight: 600;
-  line-height: 1;
+  margin-bottom: 0.5em;
 }
 
 h2 {
@@ -94,30 +94,34 @@ h2 {
 main {
   display: flex;
   flex-direction: column;
-  gap: 1.25em;
+  gap: 0.375em;
+  padding: 3em 1.25em 3em 1.25em;
+  justify-content: center;
+  align-items: center;
 }
 
-.blogs-container {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: repeat(6, 1fr);
-  grid-column-gap: 14px;
-  grid-row-gap: 14px;
-}
-
-button {
-  text-align: center;
-  text-decoration: underline;
-  font-size: 1.125rem;
-  font-weight: 500;
-  padding: 0;
-  border: none;
-  background: none;
+.blog-post {
+  display: flex;
+  text-align: left;
+  flex-direction: column;
+  padding: 0em 1em;
+  max-height: fit-content;
   cursor: pointer;
+  max-width: 400px;
 }
 
-button:hover {
-  color: #000000;
+.blog-post > img {
+  border-radius: 8px;
+  width: 100%;
+}
+
+h3 {
+  margin-top: 0.875em;
+  margin-bottom: 0;
+}
+
+.blog-post > p {
+  color: #232323;
 }
 
 /* Footer */
@@ -145,16 +149,29 @@ footer > p {
     padding: 0 2.5em;
   }
 
-  .hero {
-    padding: 15% 2em 1.5em 2em;
-  }
-
   .hero > div {
     max-width: 800px;
   }
 
   h1 {
     font-size: 3.875rem;
-    line-height: 0.5;
+  }
+
+  main {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.5em;
+    align-items: baseline;
+  }
+}
+
+@media (width >= 1228px) {
+  .hero {
+    padding: 0;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 444px;
   }
 }

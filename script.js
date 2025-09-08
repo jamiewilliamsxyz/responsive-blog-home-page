@@ -9,7 +9,7 @@ document.getElementById("copyright-year-el").textContent =
 document.getElementById("blogs-container").innerHTML = blogPostsData
   .map((blogPost) => {
     return `
-    <div>
+    <div class="blog-post">
       <p>${blogPost.datePosted}</p>
       <img src="${blogPost.thumbnailImage}"/>
       <h3>${blogPost.title}</h3>
