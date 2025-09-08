@@ -51,10 +51,26 @@ li:hover {
   box-sizing: border-box;
   width: 100vw;
   height: fit-content;
-  background-image: url(./images/hero-bg.png);
-  background-size: cover;
   color: #fdfdfd;
   padding: 15% 1.25em 1em 1.25em;
+
+  --s: 168px;
+  --c1: #131313;
+  --c2: #262627;
+  --c3: #2e2d2d;
+  background: repeating-conic-gradient(
+        from 30deg,
+        #0000 0 120deg,
+        var(--c3) 0 50%
+      )
+      calc(var(--s) / 2) calc(var(--s) * tan(30deg) / 2),
+    repeating-conic-gradient(
+      from 30deg,
+      var(--c1) 0 60deg,
+      var(--c2) 0 120deg,
+      var(--c3) 0 50%
+    );
+  background-size: var(--s) calc(var(--s) * tan(30deg));
 }
 
 .hero > p {
@@ -125,4 +141,24 @@ footer > p {
   font-weight: 400;
   font-size: 0.75rem;
   opacity: 0.8;
+}
+
+/* Media Queries */
+@media (width >= 765px) {
+  nav {
+    padding: 0 2.5em;
+  }
+
+  .hero {
+    padding: 15% 2em 1.5em 2em;
+  }
+
+  .hero > div {
+    max-width: 800px;
+  }
+
+  h1 {
+    font-size: 3.875rem;
+    line-height: 0.5;
+  }
 }
